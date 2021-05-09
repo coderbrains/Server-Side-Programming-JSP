@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <style>
+            .container{
+                padding: 20ox;
+                border: solid black 2px;
+                margin: auto;
+                width: 40%;
+                font-size:  20px;
+            }
+            
+            #myForm table tr td input{
+                    font-size: 20px;
+            }
+            
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div class="container">
+            
+            <form id="myForm" action="RegisterServlet" method="post">
+                
+                <table>
+                    
+                    <tr><h1>Fill the form</h1></tr>
+                    
+                    <tr>
+                        <td>Enter Your name :</td>
+                        <td><input type="text" name="username" placeholder="Enter Name:">
+                    </tr>
+                    
+                    <tr>
+                        <td>Enter Your Password :</td>
+                        <td><input type="password" name="pass" placeholder="Enter Password:">
+                    </tr>
+                    <tr>
+                        <td>Enter Your gmail :</td>
+                        <td><input type="email" name="email" placeholder="Enter emailId:">
+                    </tr>
+                    
+                    <tr>
+                        <td>Gender:</td>
+                        <td><input type="radio" name="gender" value="male"/>Male &nbsp; &nbsp; <input type ="radio" name ="gender" value="Female"/>Female</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Enter Your course</td>
+                        <td>
+                            <select name="course">
+                                <option value="Java">Java</option>
+                                <option value="Php">Php</option>
+                                <option value ="C_Language">C language</option>
+                                <option value="c++">c++</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name ="conditions" value="Checked"/>
+                        Accept the terms and conditions</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </td>
+                    </tr>
+                    
+                </table>
+                
+                
+            </form>
+            
+                                            
+            
+            
+            
+            
+        </div>
+        
+        
+        
+        
+    </body>
+</html>
