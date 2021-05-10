@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newpackage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Awanish kumar singh
  */
-public class servlet extends HttpServlet {
+public class servlet2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,25 +35,35 @@ public class servlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet servlet</title>");            
+            out.println("<title>Servlet servlet2</title>");            
             out.println("</head>");
             out.println("<body>");
             
-            String name = request.getParameter("name");
-            out.println("<h1>Hello, " + name + "</h1>");
-            out.println("<h1><a href = 'servlet2'>Go to servlet2</a>");
+           
             
-            /**
-             * The main disadvantages of using cookies are :
-             * 1.You cannot store illegal characters inside the cookie name
-             * 2.Space is also illegal for the cookie.
-             * 3.So you can only store the single word inside cookie.
-             */
-            //Making new Cookie object
-            Cookie c = new Cookie("user_name", name);
+            Cookie[] c = request.getCookies();
+            String name = "";
+            boolean found = false;
+            if(c == null){
+                out.println("<h1>You are a new student</h1>");
+            }else{
+                
+                for(Cookie c1 : c){
+                    String name1 = c1.getName();
+                    if(name1.equals("user")){
+                        name = c1.getValue();
+                        found = true;
+                        break;
+                    }
+                }
+            }
             
-            //Adding cookie 
-            response.addCookie(c); //Now go to servlet2 for more info.
+            if(found){
+            
+            out.println("<h1>");
+            out.println("hello, " + name + " Welcome back");
+            out.println("</h1>");
+            }
             
             out.println("</body>");
             out.println("</html>");

@@ -42,11 +42,13 @@ public class servlet2 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
+            //Getting cookies received from servlet1
             Cookie[] c = request.getCookies();
             boolean found = false;
             String name = null;
             if(c == null){
                 out.println("<h1>You are new to the Website.Please visit the home page</h1>");
+                return;
             }else{
                 
                 for(Cookie c1 : c){
