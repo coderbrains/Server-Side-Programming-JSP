@@ -40,18 +40,24 @@ public class s1 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-            String num1 = request.getParameter("first");
-            String num2 = request.getParameter("second");
+            String name = request.getParameter("username");
+            int age = Integer.parseInt(request.getParameter("age"));
+            String terms = request.getParameter("terms");
             
-            int n1 = Integer.parseInt(num1);
-            int n2 = Integer.parseInt(num2);
+            if(terms != null){
+                
+                out.println("<h1>");
+                out.println("name = " + name);
+                out.println("Age : "  + age);
+                out.println("</h1>");
+                
+            }else{
+                out.println("<h1>Terms and conditions are not checked</h1>");
+                RequestDispatcher rq = request.getRequestDispatcher("index.html");
+                rq.include(request, response);
+            }
             
-            int sum = n1 = n2;
             
-            request.setAttribute("sum", sum);
-            
-            RequestDispatcher rq = request.getRequestDispatcher("s2");
-            rq.forward(request, response);
             
             
             out.println("</body>");

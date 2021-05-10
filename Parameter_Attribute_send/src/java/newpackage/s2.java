@@ -7,7 +7,6 @@ package newpackage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Awanish kumar singh
  */
-public class s1 extends HttpServlet {
+public class s2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,22 +35,22 @@ public class s1 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet s1</title>");            
+            out.println("<title>Servlet s2</title>");            
             out.println("</head>");
             out.println("<body>");
             
-            String num1 = request.getParameter("first");
-            String num2 = request.getParameter("second");
+            int n1 = Integer.parseInt(request.getParameter("first"));
+            int n2 = Integer.parseInt(request.getParameter("second"));
             
-            int n1 = Integer.parseInt(num1);
-            int n2 = Integer.parseInt(num2);
+            int pro = n1 * n2;
             
-            int sum = n1 = n2;
+            int sum = (int)request.getAttribute("sum");
             
-            request.setAttribute("sum", sum);
+            out.println("<h1>");
+            out.println("The sum of the numbers : " + sum);
+            out.println("and the product of the numbers : " + pro);
+            out.println("</h1>");
             
-            RequestDispatcher rq = request.getRequestDispatcher("s2");
-            rq.forward(request, response);
             
             
             out.println("</body>");

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Awanish kumar singh
  */
-public class s1 extends HttpServlet {
+public class s2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,22 +36,12 @@ public class s1 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet s1</title>");            
+            out.println("<title>Servlet s2</title>");            
             out.println("</head>");
             out.println("<body>");
             
-            String num1 = request.getParameter("first");
-            String num2 = request.getParameter("second");
-            
-            int n1 = Integer.parseInt(num1);
-            int n2 = Integer.parseInt(num2);
-            
-            int sum = n1 = n2;
-            
-            request.setAttribute("sum", sum);
-            
-            RequestDispatcher rq = request.getRequestDispatcher("s2");
-            rq.forward(request, response);
+            RequestDispatcher rq = request.getRequestDispatcher("s1");
+            rq.include(request, response);
             
             
             out.println("</body>");
