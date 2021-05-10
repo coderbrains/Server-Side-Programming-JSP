@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author Awanish kumar singh
  */
 public class RegisterServlet extends HttpServlet{
-
+    
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
