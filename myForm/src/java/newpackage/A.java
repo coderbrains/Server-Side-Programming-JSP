@@ -5,17 +5,18 @@
  */
 package newpackage;
 
-import java.io.*;
-import javax.servlet.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ *
  * @author Awanish kumar singh
  */
-public class RegisterServlet extends HttpServlet{
-    
+public class A extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,12 +48,5 @@ public class RegisterServlet extends HttpServlet{
   
         
     }
-
-   
-        
-        
-  
-    
-    
     
 }
