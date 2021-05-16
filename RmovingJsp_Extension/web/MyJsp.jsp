@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Page1
-    Created on : May 14, 2021, 12:04:49 PM
+    Document   : MyJsp
+    Created on : May 15, 2021, 9:46:59 PM
     Author     : Awanish kumar singh
 --%>
 
@@ -12,9 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>This is page 1</h1>
-        <a href="Page2.jsp">Mote to page 2</a>
-        
-        
+        <div class="container">
+            
+            <h1>This is my Jsp file</h1>
+            
+        </div>
     </body>
 </html>
